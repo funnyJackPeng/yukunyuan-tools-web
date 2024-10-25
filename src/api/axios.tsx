@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'localhost:8080/api'
+const baseUrl = 'http://localhost:8080/api'
 
 const instance = axios.create()
 
@@ -30,14 +30,14 @@ const intercepion = (axiosInstance:any) => {
 interface AxiosExtraParameter{
     url:string,
     method:string,
-    headers:object,
     params:object,
     data:object | string,
 }
 
-const request = (parameters:AxiosExtraParameter) => {
+const request = (parameters:any) => {
     const options = {
         baseURL: baseUrl,
+        headers:{"Authorization":"ot2jS5QZFeJm-ovWZc7_Xa3krgf4"},
         ...parameters
     }
     intercepion(instance)
