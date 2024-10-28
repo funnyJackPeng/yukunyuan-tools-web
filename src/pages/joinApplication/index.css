@@ -1,0 +1,7 @@
+.email-content{
+    text-align: left;
+    font-size: large;
+}
+.email-content span{
+    color: green;
+}
