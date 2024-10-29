@@ -1,3 +1,4 @@
+import { JoinApplicationTemplate } from "../interfaces/JoinApplication"
 import request from "./axios"
 
 const baseUrl = 'http://localhost:8080/api'
@@ -9,6 +10,24 @@ export const getJoinApplication = () => {
         url: '/joinApplications',
         method: 'get',
 
+    })
+}
+
+export const createJoinApplication = (data:JoinApplicationTemplate) => {
+    return request({
+        baseURL: baseUrl,
+        url: '/joinApplications',
+        method: 'post',
+        data
+    })
+}
+
+export const modifyJoinApplication = (data:JoinApplicationTemplate) => {
+    return request({
+        baseURL: baseUrl,
+        url: '/joinApplications',
+        method: 'put',
+        data
     })
 }
 
