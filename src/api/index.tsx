@@ -1,4 +1,5 @@
 import { JoinApplicationTemplate } from "../interfaces/JoinApplication"
+import { UserEmailInfo } from "../interfaces/UserInfo"
 import request from "./axios"
 
 const baseUrl = 'http://localhost:8080/api'
@@ -31,6 +32,14 @@ export const modifyJoinApplication = (data:JoinApplicationTemplate) => {
     })
 }
 
+export const sendJoinApplication = () => {
+    return request({
+        baseURL: emailBaseUrl,
+        url: '/emails/joinApplication/send',
+        method: 'post',
+    })
+}
+
 export const getSystemConfig = (emailRecipientKey: string) => {
     return request({
         baseURL: baseUrl,
@@ -39,10 +48,19 @@ export const getSystemConfig = (emailRecipientKey: string) => {
     })
 }
 
-export const sendJoinApplication = () => {
+export const getUserInfo = ()=>{
     return request({
-        baseURL: emailBaseUrl,
-        url: '/emails/joinApplication/send',
-        method: 'post',
+        baseURL: baseUrl,
+        url:'/userInfos',
+        method: 'get',
+    })
+}
+
+export const modifyUserEmail = (userEmailInfo:UserEmailInfo)=>{
+    return request({
+        baseURL: baseUrl,
+        url:'/userInfos',
+        method: 'put',
+        data:userEmailInfo
     })
 }

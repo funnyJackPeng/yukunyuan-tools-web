@@ -5,9 +5,16 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
 }
+
 .personal-center img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     margin-right: 40px;
+}
+
+.personal-center .user-info{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 25px;
 }
