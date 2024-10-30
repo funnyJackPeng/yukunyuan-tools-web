@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import Main from "../pages/main";
 import JoinApplication from "../pages/joinApplication";
 import Home from "../pages/home"
+import PersonalCenter from "../pages/personalCenter";
 
 
 const routes = [
@@ -21,7 +22,10 @@ const routes = [
                 path:'joinApplication',
                 Component:JoinApplication
             },
-           
+            {
+                path:'personalCenter',
+                Component:PersonalCenter
+            }
         ]
     }
 ]

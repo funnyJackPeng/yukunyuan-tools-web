@@ -15,6 +15,7 @@ const CommonHeader = () => {
     console.log("成功登出");
   }
   const personalCenter = () => {
+    navigate("/personalCenter")
     console.log("进入个人中心")
   }
   const dispatch = useDispatch()
