@@ -2,8 +2,9 @@ import { JoinApplicationTemplate } from "../interfaces/JoinApplication"
 import { UserEmailInfo } from "../interfaces/UserInfo"
 import request from "./axios"
 
-const baseUrl = 'http://localhost:8080/api'
-const emailBaseUrl = 'http://localhost:8081/api'
+const isProd = process.env['IS-PROD-ENV'] === 'true';
+const baseUrl = isProd? 'https://https://www.ykytools.top/api' :'http://localhost:8080/api'
+const emailBaseUrl = isProd? 'https://https://www.ykytools.top/api' :'http://localhost:8081/api'
 
 export const getJoinApplication = () => {
     return request({
